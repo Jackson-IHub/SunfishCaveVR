@@ -9,7 +9,7 @@ public class NitrateDetector : MonoBehaviour
     
     public Transform nitrateLocation;
 
-    private float nitrateRange = 10f;
+    private float nitrateRange = 5f;
 
     private Color nitrateColor = new Color(0, 1, 0);
     private Color defaultColor = new Color(0, 0.66f, 1f);
@@ -32,9 +32,6 @@ public class NitrateDetector : MonoBehaviour
         float t = 1f - Mathf.Clamp01(distance / nitrateRange);
 
         colorAdjustments.colorFilter.value = Color.Lerp(defaultColor, nitrateColor, t);
-
-        Debug.Log(distance);
-        Debug.Log(t);
     }
 
 }
