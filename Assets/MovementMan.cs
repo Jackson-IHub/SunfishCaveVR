@@ -32,6 +32,10 @@ public class MovementMan : MonoBehaviour
     void Start()
     {
         image = this.GetComponentInChildren<Image>();
+        if(numberOfButtons == 0)
+        {
+            image.enabled = true;
+        }   
     }
 
     // Update is called once per frame
