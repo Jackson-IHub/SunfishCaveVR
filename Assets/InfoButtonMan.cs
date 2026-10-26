@@ -32,6 +32,8 @@ public class InfoButtonMan : MonoBehaviour
 
     public DataPanelMan dataPanelMan;
 
+    public MovementMan movementMan;
+
     private void OnEnable()
     {
         originalLocalRotation = transform.localRotation;
@@ -99,6 +101,7 @@ public class InfoButtonMan : MonoBehaviour
         
         dataPanelMan.gameObject.SetActive(true);
         dataPanelMan.StartPanelSequence();
+        movementMan.OnButtonPressed();
         childImage.color = new Color(color.r, color.g, color.b, targetA);
     }
 }
