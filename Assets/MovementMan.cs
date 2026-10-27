@@ -22,7 +22,7 @@ public class MovementMan : MonoBehaviour
     {
         numberOFButtonsPressed++;
 
-        if (numberOfButtons == numberOFButtonsPressed)
+        if (numberOfButtons <= numberOFButtonsPressed)
         {
             image.enabled = true;
         }
@@ -32,12 +32,6 @@ public class MovementMan : MonoBehaviour
     void Start()
     {
         image = this.GetComponentInChildren<Image>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnMovementButtonPressed()
