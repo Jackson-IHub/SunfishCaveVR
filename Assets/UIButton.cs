@@ -178,14 +178,6 @@ public class UIButton : MonoBehaviour
         targetUI.position = savedUIPosition;
         targetUI.localScale = savedUIScale;
 
-        // Disable the button interaction once the animation is fully complete
-        if (thisButton != null)
-        {
-            thisButton.interactable = false;
-            
-            // Note: If you meant you want the entire GameObject to vanish, 
-            // comment out the line above and uncomment the line below:
-            // gameObject.SetActive(false);
-        }
+        this.gameObject.SetActive(false);
     }
 }
