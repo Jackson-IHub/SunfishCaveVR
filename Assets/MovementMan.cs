@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+using UnityEngine.SceneManagement;
 
 public class MovementMan : MonoBehaviour
 {
@@ -36,10 +38,15 @@ public class MovementMan : MonoBehaviour
 
     public void OnMovementButtonPressed()
     {
-        if (teleportationProvider == null || teleportDestination == null)
+        if (teleportationProvider == null)
         {
             Debug.LogWarning("Teleportation Provider or Destination is missing.");
             return;
+        }
+
+        if(teleportDestination == null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         // Create a teleport request
