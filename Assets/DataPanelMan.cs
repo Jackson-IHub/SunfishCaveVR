@@ -17,10 +17,14 @@ public class DataPanelMan : MonoBehaviour
 
     private RectTransform rectTransform;
 
+    public GameObject player;
+
     private void Awake()
     {
         // Cache the RectTransform reference when the script loads
         rectTransform = GetComponent<RectTransform>();
+        
+
     }
 
     /// <summary>
@@ -29,6 +33,7 @@ public class DataPanelMan : MonoBehaviour
     public void StartPanelSequence()
     {
         StartCoroutine(PanelSequenceRoutine());
+        
     }
 
     private IEnumerator PanelSequenceRoutine()
