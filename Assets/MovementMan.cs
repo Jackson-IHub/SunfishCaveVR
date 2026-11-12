@@ -29,11 +29,10 @@ public class MovementMan : MonoBehaviour
             image.enabled = true;
         }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         image = this.GetComponentInChildren<Image>();
+        image.enabled = false;
     }
 
     public void OnMovementButtonPressed()
